@@ -1,0 +1,6 @@
+{
+  "homemod.command.sethome.success": "Home '%s' set at: %d, %d, %d",
+  "homemod.command.home.teleporting": "Teleporting to home '%s'...",
+  "homemod.command.home.not_found": "Home '%s' not found! Use /sethome first.",
+  "homemod.command.error.player_only": "This command can only be used by players!"
+}

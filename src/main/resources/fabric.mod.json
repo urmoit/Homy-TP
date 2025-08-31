@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "homemod",
+  "version": "${version}",
+  "name": "Homy TP",
+  "description": "A simple home teleportation mod with /sethome and /home commands",
+  "authors": [
+    "ChosenTechies"
+  ],
+  "contact": {
+    "homepage": "https://github.com/yourusername/homemod",
+    "sources": "https://github.com/yourusername/homemod"
+  },
+  "license": "MIT",
+  "icon": "assets/homemod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.homemod.HomeMod"
+    ],
+    "client": [
+      "com.homemod.client.HomeModClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.17.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*",
+    "chosenlib": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
