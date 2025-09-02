@@ -1,6 +1,7 @@
 package com.homemod.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
+import com.homemod.HomeMod;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.ClickEvent;
 import net.minecraft.text.MutableText;
@@ -18,7 +19,7 @@ public class HomyCommand {
 
     private static int execute(ServerCommandSource source) {
         // Version
-        source.sendMessage(Text.literal("§aHomy TP §7- Version: §ev1.1.0"));
+        source.sendMessage(Text.literal("§aHomy TP §7- Version: §e" + HomeMod.getVersion()));
 
         // Discord
         MutableText discord = Text.literal("§9Community Discord").setStyle(Style.EMPTY.withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://discord.gg/yourdiscord")));
@@ -38,3 +39,4 @@ public class HomyCommand {
         return 1;
     }
 }
+

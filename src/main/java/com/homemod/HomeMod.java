@@ -44,6 +44,6 @@ public class HomeMod implements ModInitializer {
     }
 
     public static String getVersion() {
-        return "v1.1.0";
+        return "v1.2.0";
     }
 }

@@ -2,6 +2,9 @@ package com.homemod.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
+import com.mojang.brigadier.suggestion.SuggestionProvider;
+import com.mojang.brigadier.context.CommandContext;
+import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import com.homemod.config.HomeConfig;
 import com.homemod.data.HomeData;
 import com.homemod.data.HomeManager;
@@ -18,6 +21,7 @@ public class RemoveHomeCommand {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
         dispatcher.register(literal("removehome")
             .then(argument("name", StringArgumentType.word())
+                .suggests(REMOVE_HOME_NAME_SUGGESTIONS)
                 .executes(context -> execute(context.getSource(), StringArgumentType.getString(context, "name")))
             )
         );
@@ -58,4 +62,15 @@ public class RemoveHomeCommand {
         
         return 1;
     }
+
+    private static final SuggestionProvider<ServerCommandSource> REMOVE_HOME_NAME_SUGGESTIONS = (CommandContext<ServerCommandSource> context, SuggestionsBuilder builder) -> {
+        ServerCommandSource source = context.getSource();
+        if (source.getEntity() instanceof ServerPlayerEntity player) {
+            java.util.Map<String, com.homemod.data.HomeData> homes = com.homemod.data.HomeManager.getInstance().getAllHomes(player.getUuid());
+            for (String name : homes.keySet()) {
+                builder.suggest(name);
+            }
+        }
+        return builder.buildFuture();
+    };
 }

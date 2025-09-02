@@ -59,7 +59,7 @@ Shows the mod version, clickable Discord, CurseForge, and GitHub links, and a Mo
 
 1. Install Fabric Loader
 2. Install Fabric API
-3. Install Chosenlib
+3. Install MymodLibrary
 4. Install Homy TP
 5. Start your server/client
 

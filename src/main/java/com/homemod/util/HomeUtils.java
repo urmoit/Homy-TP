@@ -2,6 +2,7 @@ package com.homemod.util;
 
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.Identifier;
 
 public class HomeUtils {
     
@@ -18,6 +19,31 @@ public class HomeUtils {
      */
     public static Text createTeleportingMessage(String homeName) {
         return Text.literal("§bTeleporting to home '" + homeName + "'...");
+    }
+    
+    /**
+     * Creates a teleporting message that includes the dimension display name
+     */
+    public static Text createTeleportingMessage(String homeName, Identifier dimensionId) {
+        String dimName = getDimensionDisplayName(dimensionId);
+        return Text.literal("§bTeleporting to " + dimName + " home '" + homeName + "'...");
+    }
+    
+    /**
+     * Returns a nice display name for common dimensions
+     */
+    public static String getDimensionDisplayName(Identifier dimensionId) {
+        if (dimensionId == null) {
+            return "home";
+        }
+        String id = dimensionId.toString();
+        if ("minecraft:overworld".equals(id)) return "Overworld";
+        if ("minecraft:the_nether".equals(id)) return "Nether";
+        if ("minecraft:the_end".equals(id)) return "End";
+        // Fallback: use path with capitalization
+        String path = dimensionId.getPath();
+        if (path == null || path.isEmpty()) return id;
+        return Character.toUpperCase(path.charAt(0)) + path.substring(1).replace('_', ' ');
     }
     
     /**
