@@ -59,7 +59,7 @@ Shows the mod version, clickable Discord, CurseForge, and GitHub links, and a Mo
 
 1. Install Fabric Loader
 2. Install Fabric API
-3. Install MymodLibrary
+3. Install Chosenlib
 4. Install Homy TP
 5. Start your server/client
 
@@ -83,4 +83,5 @@ MIT License — feel free to modify and distribute!
 
 ---
 
-**Homy TP v1.1.0** — Cross-version ready! If you need support for a specific Minecraft version, let us know on Discord.
+**Homy TP v1.2.0** — Cross-version ready! If you need support for a specific Minecraft version, let us know on Discord.
+
