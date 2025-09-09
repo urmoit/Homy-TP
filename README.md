@@ -8,6 +8,7 @@ A simple, lightweight Fabric mod that adds home teleportation commands to Minecr
 - **/home [name]** — Instantly teleport to your home. The chunk is always loaded before teleporting, so you never get stuck in the void!
 - **/homes** — List all your homes and their coordinates. Available to all players.
 - **/removehome [name]** — Remove a home by name.
+- **/back** — Teleport to your previous location.
 - **/ophomes** — (OP only) List every player’s homes on the server, including coordinates and dimension, with usernames.
 - **/homy** — Shows mod version, clickable community links, and project pages.
 
@@ -36,6 +37,9 @@ Removes a home by name.
 **Usage:**
 - `/removehome mansion` — Removes the home named "mansion"
 
+### /back
+Teleports you to your previous location before your last teleport.
+
 ### /ophomes
 OP-only command. Lists all homes for all players, showing usernames and coordinates.
 
@@ -53,13 +57,13 @@ Shows the mod version, clickable Discord, CurseForge, and GitHub links, and a Mo
 
 - Fabric Loader 0.17.0+
 - Fabric API
-- **MymodLibrary** (your custom library mod)
+- **ChosenLib** (your custom library mod)
 
 ## Installation
 
 1. Install Fabric Loader
 2. Install Fabric API
-3. Install MymodLibrary
+3. Install ChosenLib
 4. Install Homy TP
 5. Start your server/client
 
@@ -83,4 +87,4 @@ MIT License — feel free to modify and distribute!
 
 ---
 
-**Homy TP v1.1.0** — Cross-version ready! If you need support for a specific Minecraft version, let us know on Discord.
+**Homy TP v1.3.0** — Cross-version ready! If you need support for a specific Minecraft version, let us know on Discord.
