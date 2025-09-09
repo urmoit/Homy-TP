@@ -1,5 +1,6 @@
 package com.homemod;
 
+import com.homemod.commands.BackCommand;
 import com.homemod.commands.HomeCommand;
 import com.homemod.commands.ListHomesCommand;
 import com.homemod.commands.OphomesCommand;
@@ -35,6 +36,7 @@ public class HomeMod implements ModInitializer {
             ListHomesCommand.register(dispatcher);
             OphomesCommand.register(dispatcher);
             HomyCommand.register(dispatcher);
+            BackCommand.register(dispatcher);
         });
         
         // Tests removed - mod will fail to load if MymodLibrary is missing
@@ -44,6 +46,6 @@ public class HomeMod implements ModInitializer {
     }
 
     public static String getVersion() {
-        return "v1.2.0";
+        return "v1.3.0";
     }
 }

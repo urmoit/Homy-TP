@@ -1,5 +1,6 @@
 package com.homemod.commands;
 
+import com.homemod.data.BackManager;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
@@ -46,6 +47,9 @@ public class HomeCommand {
             source.sendError(HomeUtils.createHomeNotFoundMessage(finalHomeName));
             return 0;
         }
+
+        // Store current location for /back command
+        BackManager.getInstance().setLastLocation(player.getUuid(), new BackManager.LastLocation(player.getWorld().getRegistryKey(), player.getPos()));
         
         // Get the target world/dimension
         ServerWorld targetWorld = player.getServer().getWorld(
